@@ -14,5 +14,13 @@ public class HomePage {
     public HomePage() {
         heading.shouldBe(Condition.visible);
     }
+    public CardPage goToCardPage() {
+        buyButton.click();
+        return new CardPage();
+    }
+    public CreditPage goToCreditPage() {
+        creditButton.click();
+        return new CreditPage();
+    }
 
 }
