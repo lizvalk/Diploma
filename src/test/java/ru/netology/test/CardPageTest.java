@@ -25,8 +25,11 @@ public class CardPageTest {
 
     @BeforeEach
     void setUp() {
-//        SQLHelper.cleanDB();
         homePage = open("http://localhost:8080/", HomePage.class);
+    }
+    @AfterEach
+    void tearDown() {
+        SQLHelper.cleanDB();
     }
     @Test
     void shouldSuccessfulWhenDataValidForCardApproved() { //все поля валидные карта 1
@@ -34,6 +37,7 @@ public class CardPageTest {
         var cardPage = homePage.goToCardPage();
         cardPage.fillingCardData(cardInfo);
         cardPage.shouldSuccessfulPayment();
+        assertEquals("APPROVED", SQLHelper.getPaymentStatus());
     }
     @Test
     void shouldRefusalPurchaseUsingCardWithDECLINEDStatus() { //все поля валидные карта 2
@@ -41,6 +45,7 @@ public class CardPageTest {
         var cardPage = homePage.goToCardPage();
         cardPage.fillingCardData(cardInfo);
         cardPage.shouldDeclinedTransaction();
+        assertEquals("DECLINED", SQLHelper.getPaymentStatus());
     }
     @Test
     void shouldSuccessfulIfCardholderDataWithHyphen() { //все поля валидные. Поле Владелец через дефис
@@ -48,6 +53,7 @@ public class CardPageTest {
         var cardPage = homePage.goToCardPage();
         cardPage.fillingCardData(cardInfo);
         cardPage.shouldSuccessfulPayment();
+        assertEquals("APPROVED", SQLHelper.getPaymentStatus());
     }
     @Test
     void shouldErrorWhenCardNumberEmpty() { //поле Номер карты пустое - неверный формат
