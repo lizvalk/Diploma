@@ -18,10 +18,8 @@ java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aq
 ```
 java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar
 ```
-9. Тестируемое приложение должно быть доступно по адресу:
-```
-http://localhost:8080/
-```
+9. Тестируемое приложение должно быть доступно по адресу: _http://localhost:8080/_
+
 11. В новой вкладке терминала запустить авто-тесты командой:
 
 **Для MySQL:**
