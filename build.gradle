@@ -26,6 +26,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
     implementation 'com.codeborne:selenide:6.17.2'
     implementation 'io.qameta.allure:allure-selenide:2.20.1'
+    testImplementation 'io.qameta.allure:allure-selenide:2.20.1'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     implementation 'commons-dbutils:commons-dbutils:1.7'
     implementation 'mysql:mysql-connector-java:8.0.30'
