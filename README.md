@@ -26,11 +26,11 @@ java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifac
 
 **Для MySQL:**
 ```
-./gradlew clean test (дописать)
+./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
 ```
 **Для PostgreSQL:**
 ```
-./gradlew clean test (дописать)
+./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
 ```
 5. Сформировать отчёт о тестировании с помощью Allure через команду:
 ```

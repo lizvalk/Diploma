@@ -10,12 +10,15 @@ import java.sql.SQLException;
 
 public class SQLHelper {
     private static final QueryRunner runner = new QueryRunner();
+    private static final String url = System.getProperty("db.url");
+    private static final String user = System.getProperty("db.user");
+    private static final String pass = System.getProperty("db.password");
     private SQLHelper() {
 
     }
     @SneakyThrows
     private static Connection getConn() {
-        return DriverManager.getConnection("jdbc:postgresql://localhost:5432/app", "app", "pass");
+        return DriverManager.getConnection(url, user, pass);
     }
     @SneakyThrows
     public static String getPaymentStatus() {
