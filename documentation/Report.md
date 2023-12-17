@@ -20,4 +20,3 @@
 ![img_2.png](img_2.png)
 ## Общие рекомендации
 * Исправить найденные ошибки в [issues ](https://github.com/lizvalk/Diploma/issues)
-* 
